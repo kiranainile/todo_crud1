@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class="from-group">
+                        <!-- <label for="todoItem" >TodoItem</label> -->
+                                             <h2 class="text-center">{{isTodoEditMode ? 'Update Todo' : 'Add Todo'}}</h2>
+                        <!-- <input [(ngModel)]#producName type="text" class="form-control" name="todoItem" id="todoItem" #todoItem> -->
+                         <input #todosItem type="text" class="form-control">
+                    </div>
+                      
+                    <p *ngIf class="alert alert-warning mt-3 "></p>
+                        <div class="card-footer  d-flex justify-content-between text-center">
+                        <button class="btn btn-sm btn-primary w-100 mt-5"  *ngIf=" !isTodoEditMode" (click)="todoSub()"><b><i>Add Todos</i></b></button>
+                        <button class="btn btn-sm btn-success w-100 mt-5" *ngIf="isTodoEditMode" (click)="onUpdate()" ><b><i>Update Todos</i></b></button>
+
+                </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-7">
+            <ul class="list-group mt-3" *ngIf="todoArr.length > 0; else noTodos">
+                <li class="list-group-item d-flex justify-content-between " *ngFor="let todos of todoArr">
+                    <h5>{{todos.todoItem}}</h5>
+                    <div>
+                        <button class="btn btn-sm btn-outline-primary mr-2" (click)="onEdit(todos)">Edit</button>
+                        <button class="btn btn-sm btn-outline-danger" (click)="onRemove(todos.todoId)">Remove</button>
+                    </div>
+                </li>
+            </ul>
+            <ng-template #noTodos>
+                <p class="alert alert-info">
+                    NO Todos Added Yet !!!
+                </p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class="from-group">
+                          <h2 class="text-center">{{isFlowerEditMode ? 'Update Flower' : 'Add flower'}}</h2>
+                        <!-- <input [(ngModel)]#FlowewrName type="text" class="form-control" name="flowerItem" id="flowerItem"> -->
+                         <input #flowerItem type="text" class="form-control">
+                         <!-- <input #flowerInput type="text" class="form-control" name="flowerItem" id="flowerItem"> -->
+                    </div>
+                     
+                    <p *ngIf class="alert alert-warning mt-3 "></p>
+                        <div class="card-footer  d-flex justify-content-between text-center">
+                        <button class="btn btn-sm btn-primary w-100 mt-5"  *ngIf=" !isFlowerEditMode" (click)="todoSubb()">Add Flower</button>
+                        <button class="btn btn-sm btn-success w-100 mt-5" *ngIf="isFlowerEditMode" (click)="onUpdatei()" >Update Flower</button>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+     <div class="col-7">
+            <ul class="list-group mt-3" *ngIf="todoArr1.length > 0; else noTodos">
+                <li class="list-group-item d-flex justify-content-between " *ngFor="let kiran of todoArr1">
+                    <h5>{{kiran.todoItem}}</h5>
+                    <div>
+                        <button class="btn btn-sm btn-outline-primary mr-2" (click)="onEditi(kiran)">Edit</button>
+                        <button class="btn btn-sm btn-outline-danger" (click)="onRemovei(kiran.todoId)">Remove</button>
+                    </div>
+                </li>
+            </ul>
+            <ng-template #noTodos>
+                <p class="alert alert-info">
+                    NO flowers Added Yet !!!
+                </p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+
+
+
