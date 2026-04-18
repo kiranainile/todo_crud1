@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-md-5">
+            <div class="card mt-3">
                 <div class="card-body">
                     <div class="from-group">
                         <!-- <label for="todoItem" >TodoItem</label> -->
@@ -12,20 +12,20 @@
                       
                     <p *ngIf class="alert alert-warning mt-3 "></p>
                         <div class="card-footer  d-flex justify-content-between text-center">
-                        <button class="btn btn-sm btn-primary w-100 mt-5"  *ngIf=" !isTodoEditMode" (click)="todoSub()"><b><i>Add Todos</i></b></button>
-                        <button class="btn btn-sm btn-success w-100 mt-5" *ngIf="isTodoEditMode" (click)="onUpdate()" ><b><i>Update Todos</i></b></button>
+                        <button class="btn btn-sm btn-primary w-100"  *ngIf=" !isTodoEditMode" (click)="todoSub()"><b><i>Add Todos</i></b></button>
+                        <button class="btn btn-sm btn-success w-100" *ngIf="isTodoEditMode" (click)="onUpdate()" ><b><i>Update Todos</i></b></button>
 
                 </div>
                 </div>
             </div>
 
         </div>
-        <div class="col-4">
-            <ul class="list-group mt-2" *ngIf="todoArr.length > 0; else noTodos">
+        <div class="col-7">
+            <ul class="list-group mt-3" *ngIf="todoArr.length > 0; else noTodos">
                 <li class="list-group-item d-flex justify-content-between " *ngFor="let todos of todoArr">
                     <h5>{{todos.todoItem}}</h5>
                     <div>
-                        <button class="btn btn-sm btn-outline-primary mr-2" (click)="onEdit(todos)">Edit</button>
+                        <button class="btn btn-sm btn-outline-primary mr-3" (click)="onEdit(todos)">Edit</button>
                         <button class="btn btn-sm btn-outline-danger" (click)="onRemove(todos.todoId)">Remove</button>
                     </div>
                 </li>
@@ -41,8 +41,8 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-md-5">
+            <div class="card mt-3">
                 <div class="card-body">
                     <div class="from-group">
                           <h2 class="text-center">{{isFlowerEditMode ? 'Update Flower' : 'Add flower'}}</h2>
@@ -53,8 +53,8 @@
                      
                     <p *ngIf class="alert alert-warning mt-3 "></p>
                         <div class="card-footer  d-flex justify-content-between text-center">
-                        <button class="btn btn-sm btn-primary w-100 mt-5"  *ngIf=" !isFlowerEditMode" (click)="todoSubb()"><b><i>Add Flower</i></b></button>
-                        <button class="btn btn-sm btn-success w-100 mt-5" *ngIf="isFlowerEditMode" (click)="onUpdatei()" ><b><i>Update Flower</i></b></button>
+                        <button class="btn btn-sm btn-primary w-100"  *ngIf=" !isFlowerEditMode" (click)="todoSubb()"><b><i>Add Flower</i></b></button>
+                        <button class="btn btn-sm btn-success w-100" *ngIf="isFlowerEditMode" (click)="onUpdatei()" ><b><i>Update Flower</i></b></button>
                     
                 </div>
 
@@ -62,12 +62,12 @@
 
         </div>
     </div>
-     <div class="col-4">
+     <div class="col-7">
             <ul class="list-group mt-3" *ngIf="todoArr1.length > 0; else noTodos">
                 <li class="list-group-item d-flex justify-content-between " *ngFor="let kiran of todoArr1">
                     <h5>{{kiran.todoItem}}</h5>
                     <div>
-                        <button class="btn btn-sm btn-outline-primary mr-2" (click)="onEditi(kiran)">Edit</button>
+                        <button class="btn btn-sm btn-outline-primary mr-3" (click)="onEditi(kiran)">Edit</button>
                         <button class="btn btn-sm btn-outline-danger" (click)="onRemovei(kiran.todoId)">Remove</button>
                     </div>
                 </li>
